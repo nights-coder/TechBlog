@@ -17,7 +17,7 @@
         }
         </style>
         <link rel="stylesheet" href="./CSS/mystyle.css">
-        <title>JSP Page</title>
+        <title>Home Page</title>
     </head>
     <body>
         
