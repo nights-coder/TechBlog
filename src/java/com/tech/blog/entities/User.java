@@ -1,6 +1,6 @@
 package com.tech.blog.entities;
 
-import java.security.Timestamp;
+//import java.security.Timestamp;
 import java.sql.*;
 
 public class User {
