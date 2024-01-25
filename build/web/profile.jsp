@@ -1,3 +1,4 @@
+<%@page import="com.tech.blog.entities.Message"%>
 <%@page import="com.tech.blog.entities.User" %>
 <%@page errorPage="error.jsp" %>
 <%
@@ -58,7 +59,41 @@
                 </div>
             </div>
         </nav>
+        <!--navbar-->
 
+        <%
+            Message m = (Message) session.getAttribute("msg");
+            if (m != null && m.getType().equals("error")) {
+
+        %>
+
+        <div id="popup" class="alert bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline">Profile picture not updated</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hideThis()">
+                <svg class="fill-current h-4 w-6 text-red-500"  role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
+
+        <%                            session.removeAttribute("msg");
+            }
+
+            if (m != null && m.getType().equals("success")) {
+
+
+        %>
+
+        <div id="popup2" class="alert bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded relative" role="alert">
+            <strong class="font-bold">Updated</strong>
+            <span class="block sm:inline">Successfully..</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="hideThis2()">
+                <svg class="fill-current h-4 w-6 text-green-500"  role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
+
+        <%                            session.removeAttribute("msg");
+            }
+        %>
 
 
         <!--profile modal -->
@@ -66,7 +101,7 @@
 
             <div class="bg-white rounded shadow-lg w-1/3">
                 <div class="border-b px-4 pb-2 pt-4 text-center bg-[#2196f3]">
-                    <img class="h-[100px] m-auto rounded-full" src="./pics/default.png.jpg" alt="default"/>
+                    <img class="h-[100px] m-auto rounded-full" src="./pics/<%= user.getProfile()%>" alt="default"/>
                     <p class="mt-2 text-xl"><%= user.getName()%></p>
                 </div>
 
@@ -120,7 +155,7 @@
                                     <td class="py-2"><%= user.getName()%></td>
 
                                 </tr>
-                                
+
                                 <tr class="border-b">
                                     <td class="font-semibold py-2">Email : </td>
                                     <td class="py-2"><input type="email" required name="user_email" value="<%= user.getEmail()%>"></td>
@@ -132,28 +167,28 @@
                                     <td class="py-2"><input type="password" required name="user_password" value="<%= user.getPassword()%>"></td>
 
                                 </tr>
-                                
+
                                 <tr class="border-b">
                                     <td class="font-semibold py-2">Gender : &nbsp;</td>
                                     <td class="py-2"><%= user.getGender()%></td>
 
                                 </tr>
-                                
+
                                 <tr class="border-b">
                                     <td class="font-semibold py-2">Profile Pic : </td>
                                     <td class="py-2"><input type="file" name="image"></td>
 
                                 </tr>
-                                
+
                                 <tr>
                                     <td class="font-semibold py-2">Status : </td>
                                     <td class="py-2"><textarea class="border" name="user_about" rows="3" cols="35"><%= user.getAbout()%></textarea></td>
                                 </tr>
                             </tbody>
                         </table>
-                                <div class="text-center">
-                                    <button id="save-btn" type="submit" class="bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded text-white">Save Changes</button><span class="px-2 fa fa-pencil"></span>
-                                </div>
+                        <div class="text-center">
+                            <button id="save-btn" type="submit" class="bg-blue-500 hover:bg-blue-600 px-2 py-1 rounded text-white">Save Changes</button><span class="px-2 fa fa-pencil"></span>
+                        </div>
                     </form>
                 </div>                           
                 <!--profile edit end-->                
@@ -214,6 +249,22 @@
                     }
                 });
             });
+        </script>
+        <script>
+            function toggleDropdown() {
+                let dropdown = document.querySelector('#dropDownButton #dropDown');
+                dropdown.classList.toggle("hidden");
+            }
+            
+            function hideThis(){
+                let pop = document.querySelector('#popup');
+                pop.classList.toggle("hidden");
+            }
+            
+            function hideThis2(){
+                let pop = document.querySelector('#popup2');
+                pop.classList.toggle("hidden");
+            }
         </script>
     </body>
 </html>
