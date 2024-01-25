@@ -40,9 +40,9 @@
                 </ul>
             </div>
             <div class="right-side">
-            <form>
-                <input class="h-8 text-black border rounded" type="search" placeholder="Search" aria-label="Search">
-                <button class="p-1 border rounded hover:bg-blue-500">Search</button>       
+            <form class="flex flex-row justify-center items-center">
+                <input class="h-8 mx-2 text-black border rounded" type="search" placeholder="Search" aria-label="Search">
+                <button class="p-1 border rounded hover:bg-blue-500"><span><img class="h-[22px] w-[24px]" src="./search_icon.png" alt="search icon"/></span></button>       
             </form>
             </div>
         </div>

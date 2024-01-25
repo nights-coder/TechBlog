@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&family=Mukta:wght@500&display=swap" rel="stylesheet">
         <style>
         .banner{
-            clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 95%, 67% 90%, 32% 96%, 0 91%, 0 0);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 100%, 70% 89%, 33% 100%, 0 88%, 0 0);
         }
         </style>
         <link rel="stylesheet" href="./CSS/mystyle.css">

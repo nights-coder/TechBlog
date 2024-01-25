@@ -50,9 +50,9 @@
                 </ul>
             </div>
             <div class="right-side">
-            <form>
-                <input class="h-8 text-black border rounded" type="search" placeholder="Search" aria-label="Search">
-                <button class="p-1 border rounded bg-[#2196f3] hover:bg-blue-500">Search</button>       
+            <form class="flex flex-row justify-center items-center">
+                <input class="h-8 mx-2 text-black border rounded" type="search" placeholder="Search" aria-label="Search">
+                <button class="p-1 border rounded hover:bg-blue-500"><span><img class="h-[22px] w-[24px]" src="./search_icon.png" alt="search icon"/></span></button>       
             </form>
             </div>
         </div>
@@ -80,22 +80,25 @@
                             <input name="user_password" type="password" class="password border border-gray-400 rounded-sm mt-1 h-8 px-1" placeholder="Enter password">
                         </div>
                         <div class="form-group3 py-2">
-                            <input type="checkbox" class="form-check-input-1" id="gen1" name="user_gender" onclick="return myFunc()">
+                            <input type="checkbox" name="user_gender" value="male" onclick="return myFunc()">
                             <label class="form-check-label" for="gen1">Male</label>
-                            <input type="checkbox" class="form-check-input-2" id="gen2" name="user_gender" onclick="return myFunc()">
+                            <input type="checkbox" name="user_gender" value="female" onclick="return myFunc()">
                             <label class="form-check-label" for="gen2">Female</label>
                         </div>
                         <div class="form-group4 py-2">
-                            <textarea name="user_about" class="border border-gray-400 rounded-sm" id="usertext" rows="4" cols="40" placeholder="Enter something about yourself"></textarea>
+                            <textarea name="user_about" class="border border-gray-400 rounded-sm" id="usertext" rows="3" cols="48" placeholder="We would love to know more about yourself"></textarea>
                             <br>
                             <input name="user_check" type="checkbox" class="form-check-input-3" id="exampleCheck2">
-                            <label class="form-check-label" for="exampleCheck2">agree to terms and conditions</label>
+                            <label class="form-check-label" for="exampleCheck2">Agree to T&C</label>
                         </div>
                         <div class="container" id="loader" style="display: none;">
                             <p><span class="fa fa-refresh fa-spin px-2"></span>Please wait...</p>
                         </div>
-                        <div class="form-button pt-2 pb-4" id="submit-btn">
-                            <button class="px-2 py-1 text-white bg-[#2196f3] border rounded hover:bg-blue-500">Submit</button>
+                        <div class="form-button pt-2 pb-2 text-center" id="submit-btn">
+                            <button class="px-2 py-1 text-white bg-[#2196f3] border rounded hover:bg-blue-500">Join us!</button>
+                        </div>
+                        <div class="login-link underline text-blue-400 hover: text-blue-600 text-center my-2">
+                            <a href="loginpage.jsp">Already Registered? Login here</a>
                         </div>
                     </form>
                 </div>
@@ -127,7 +130,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="./JS/myjs.js" type="text/javascript"></script>
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js"></script>
 
         <script>
